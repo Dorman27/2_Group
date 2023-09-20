@@ -103,3 +103,23 @@ B : 묵시적형변환이 반대로 일어날 수 없는데 그 이유는 반대
     이 과정을 명시적 형변환이라고 해.
 A : 추가적으로 묵시적 형변환보다 명시적 형변환을 사용하는 것이 코드가 읽기 쉬워져서 다른 사람과 코드를 공유할 때에 코드를 이해하기 쉬워져.
     또한, 혹시 모르는 오류를 사전에 방지할 수 있어.
+
+
+P89 입출력 혼자해보기 3-2
+
+#include <stdio.h>
+
+int main(void)
+{
+	char grades;
+	printf("성적 등급을 입력하시오 : ");
+
+	//getchar(grade);
+	grade = getchar();
+
+	printf("당신의 성적 : ");
+	putchar(grade); //()안에 grade 추가
+	printf("\n")
+
+	return 0;
+}
