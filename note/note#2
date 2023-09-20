@@ -111,7 +111,7 @@ P89 입출력 혼자해보기 3-2
 
 int main(void)
 {
-	char grades;
+	char grade;
 	printf("성적 등급을 입력하시오 : ");
 
 	//getchar(grade);
@@ -124,9 +124,18 @@ int main(void)
 	return 0;
 }
 
-위 문제는 먼저 문
+A : 위 문제는 문자형 자료형인 char를 사용해서 문자형 grade를 선언했네. 그렇다면 어떤 부분이 문제일까?
+B : getchar과 putchar 사용에 있어서 오류가 있는거 같아.
+A : 음 그러네.
+    getchar를 이용해 변수 grade에 입력하기 위해서는 getchar(grade); 가 아니라 grade = getchar();
+    로 수정해서 사용해야해.
+B : 그리고 putchar을 이용해 출력하기 위해서는 putchar();의 () 안에 grade를 추가해야 코드가 정상적으로 작동할 것 같아.
+    이야기 나눈 부분을 토대로 코드를 수정해서 실행시켜볼게.
+결과값
 성적 등급을 입력하시오 : 1
 당신의 성적 : 1
 
 E:\3week\3week\x64\Debug\3week.exe(프로세스 8052개)이(가) 종료되었습니다(코드: 0개).
 이 창을 닫으려면 아무 키나 누르세요...
+B : 수정하여 실행했더니 결과값이 우리가 원하던 결과가 도출되었어.
+A : 좋아.
