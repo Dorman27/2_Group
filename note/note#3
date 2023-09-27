@@ -13,7 +13,7 @@ int main(void)
 {
 	int a, b = 0;
 	
-    a = 4;
+        a = 4;
 	printf("a = 4 문장을 실행한 후 a의 값은 %d\n", a);
 	a = a + 3;
 	printf("a = a + 3 문장을 실행한 후 a의 값은 %d\n", a);
@@ -94,12 +94,12 @@ int main(void)
 int main(void)
 {
 	unsigned char lastmask = 1;
-	unsigned char firstmask = 128;
+	unsigned char firstmask = 256;
 
 	unsigned char input;
 
 	printf("값을 입력하시오 : ");
-	scanf_s("%c", &input);
+	scanf_s("%hhu", &input);
 
 	printf("입력한 값의 %d의 첫번째 비트는 %d 이다, \n", input, input & firstmask);
 
@@ -112,6 +112,21 @@ int main(void)
 지민 : 160은 2진수로 나타냈을 때 10010000 로 나타낼 수 있어
 근언 : FM은 10000000로 나타나. 따라서 첫번째 비트는 1이야.
 지민 : LM은 00000001로 나타낼 수 있어. 따라서 첫번째 비트는 0이야.
+
+#include <stdio.h>
+
+int main(void)
+{
+	int x, y;
+	
+	printf("x = %d, y = %d\n", x = (y = 5, y + 10), y);
+	
+	return 0;
+}
+
+근언 ： 결과 값을 예상해보자。
+지민 ： ｘ에는 괄호 안에 수식들이 순차적으로 진행되니 ｙ에 ５가 저장되고 １０이 더해지니 １５라는 값이 ｘ에 저장이 되었어。
+근언 ： ｙ는 역순으로 진행되니 ｙ ＋ １０먼저 진행되고 그 다음 ｙ ＝ ５로 초기화 되었으니 ｙ는 ５야。
 
 
 
