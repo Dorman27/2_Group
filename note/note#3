@@ -88,3 +88,39 @@ int main(void)
 지민 : 맞아. 그리고 그냥 식을 쓰는 것 보단 괄호를 포함하여 식을 쓰는 것이 가독성이 훨씬 뛰어나.
 근언 : 동의해. 나도 연산을 할 때 괄호를 즐겨 써야겠다.
 
+
+#include <stdio.h>
+
+int main(void)
+{
+	unsigned char lastmask = 1;
+	unsigned char firstmask = 128;
+
+	unsigned char input;
+
+	printf("값을 입력하시오 : ");
+	scanf_s("%d", &input);
+
+	printf("입력한 값의 %d의 첫번째 비트는 %d 이다, \n", input, input & firstmask);
+
+	printf("입력한 값의 %d의 마지막 비트는 %d 이다, \n", input, input & lastmask);
+
+	return 0;
+}
+
+근언 : 위 코드에 160을 넣었을 때 결과를 알아보자!
+지민 : 160은 2진수로 나타냈을 때 10010000 로 나타낼 수 있어
+근언 : FM은 10000000로 나타나. 따라서 첫번째 비트는 1이야.
+지민 : LM은 00000001로 나타낼 수 있어. 따라서 첫번째 비트는 0이야.
+
+
+
+
+
+
+
+
+
+
+
+
