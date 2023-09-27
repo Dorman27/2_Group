@@ -64,4 +64,27 @@ int main(void)
 지민 : 다섯번째는 (1 and 0) or (0 and 1) 이니 괄호 행 먼저 계산하면 0 or 0 이 되니 결과는 0이야.
 근언 : 정리하자면 위에서부터 1 1 0 0 0 이라는 결과라는 걸 알 수 있어.
 
+#include <stdio.h>
+
+int main(void)
+{
+	int a = 0, b = 1, c = 1;
+	
+	printf("a < b && c > a의 결과 : %d\n", a < b && c > a);
+	printf("a > b && c > a의 결과 : %d\n", a > b&& c > a);
+	printf("a > b || c > a의 결과 : %d\n\n", a > b || c > a);
+	
+	printf("괄호를 사용하는 것이 더 좋음\n");
+	printf("(a > b) || (c > a)의 결과 : %d\n", (a > b) || (c > a));
+	
+	return 0;
+}
+
+근언 : 비교연산자는 논리연산자보다 선순위에 있어.
+지민 : 맞아. 그렇다면 위 코드의 결과를 예상해볼까?
+근언 : a < b && c > a 는 TRUE and TRUE 이니 결과는 TRUE야.
+지민 : a > b && c > a 는 FALSE and TRUE 이니 결과는 FALSE야.
+근언 : a > b || c > a 는 FALSE or TRUE 이니 결과는 TRUE야.
+지민 : 맞아. 그리고 그냥 식을 쓰는 것 보단 괄호를 포함하여 식을 쓰는 것이 가독성이 훨씬 뛰어나.
+근언 : 동의해. 나도 연산을 할 때 괄호를 즐겨 써야겠다.
 
