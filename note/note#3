@@ -99,7 +99,7 @@ int main(void)
 	unsigned char input;
 
 	printf("값을 입력하시오 : ");
-	scanf_s("%d", &input);
+	scanf_s("%c", &input);
 
 	printf("입력한 값의 %d의 첫번째 비트는 %d 이다, \n", input, input & firstmask);
 
