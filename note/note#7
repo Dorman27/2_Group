@@ -170,3 +170,82 @@ int main(void)
 	return 0;
 }
 좋아 이렇게 하자.
+
+근언 : 최댓값 최솟값을 출력하는 함수를 만들어야해
+지민 :
+#include <stdio.h>
+
+int maxArray(int Array[], int size);
+int minArray(int Array[], int size);
+
+int main(void)
+{
+   int a[] = { 20, 34, 12, 24, 54, 91, 9, 40, 81, 10 };
+
+   int my_max = a[0], my_min = a[0];
+
+   my_max = maxArray(a, 10);
+   my_min = minArray(a, 10);
+   printf("배열 원소의 최대값 : %d\n", my_max);
+   printf("배열 원소의 최소값 : %d\n", my_min);
+
+   return 0;
+}
+
+int maxArray(int Array[], int size)
+{
+   int max_result = Array[0], i;
+
+   for (i = 0; i < size; i++)
+   {
+      if (max_result < Array[i])
+      {
+         max_result = Array[i];
+      }
+   }
+
+   return max_result;
+}
+
+int minArray(int Array[], int size)
+{
+   int min_result = Array[0], i;
+
+   for (i = 0; i < size; i++)
+   {
+      if (min_result > Array[i])
+      {
+         min_result = Array[i];
+      }
+   }
+
+   return min_result;
+}
+난 이렇게 구성했어
+근언 : 나는 최대값 최소값을 따로 구성하는 것이 아니라 두개를 하나의 함수로 합쳐봤어.
+
+#include <stdio.h>
+
+int max, min; 
+
+void arr(int a[])
+{
+	max = a[0];
+	min = a[0];
+	for (int i = 0; i < 10; i++)
+	{
+		if (max < a[i])
+			max = a[i];
+		if (min > a[i])
+			min = a[i];
+	}
+}
+
+int main(void)
+{
+	int b[] = { 20, 34, 12, 24, 54, 91, 9, 40, 81, 10 };
+	arr(b);
+	printf("최대값 : %d\n최소값 : %d", max, min);
+	return 0;
+}
+이렇게 구성하면 더 짧은 코드가 될거야.
