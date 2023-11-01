@@ -59,3 +59,53 @@ int main()
 지민 : 좋아 위는 Hello, world!를 작성하고 출력하는 함수를 만들고, 메인함수에는 그것의 위치를 찾는 코드를 짜보자
 근언 : 실행해봤더니 00007FF797BD13DE라는 값이 나와 이게 이 함수의 주소값인가봐.
 
+
+근언 : 입력된 두 숫자를 포함한 그 사이의 수를 전부 더하는 함수를 만들어야해.
+지민 : 그러면 for문을 사용해서 코드를 짜면 될거같아.
+근언 :
+int Integral(int start, int end)
+{
+	int sum = 0;
+	for (start; start <= end; start++) {
+		sum += start;
+	}
+	return sum;
+}
+이런식으로 함수를 구성하면 start부터 end까지 전부 더한 수를 출력할 수 있어.
+지민 :
+그럼 전체 코드를 짜보면
+#include<stdio.h>
+
+int Integral(int start, int end)
+{
+	int sum = 0;
+	for (start; start <= end; start++) {
+		sum += start;
+	}
+	return sum;
+}
+
+int main(void)
+{
+	int result = 0, i;
+
+	printf("함수를 사용하지 않고 합을 구함\n");
+	for (i = 1; i <= 10; i++)
+		result += i;
+
+	printf("1부터 10까지 합은 %d다. \n", result);
+
+	result = 0;
+	
+	for (i = 7; i <= 17; i++)
+		result += i;
+
+	printf("7부터 17까지의 합은 %d다.\n", result);
+	printf("**************************\n");
+	printf("함수를 사용하여 답을 구함.\n");
+	printf("1부터 10까지의 합은 %d다.\n", Integral(1, 10));
+	printf("7부터 17까지의 합은 %d다.\n", Integral(7, 17));
+
+	return 0;
+}
+이렇게 구성이 될거같아.
