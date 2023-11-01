@@ -147,3 +147,26 @@ int main(void)
 	return 0;
 }
 지민 : 실행해봤더니 잘 작동하는거 같아.
+
+
+근언 : 펙토리얼 함수를 작성해보자
+지민 : 재귀함수를 이용해서 계속 곱하면 좋을거같아.
+#include <stdio.h>
+
+int factorial(int n)
+{
+	if (n <= 1)
+		return(1);
+	else
+		return(n * factorial(n - 1));
+}
+
+int main(void)
+{
+	int fact_num;
+	fact_num = factorial(10);
+	printf("10 팩토리얼 : %d\n", fact_num);
+			
+	return 0;
+}
+좋아 이렇게 하자.
