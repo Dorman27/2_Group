@@ -1,0 +1,61 @@
+#include<stdio.h>
+
+int SumTwo(int a, int b) {
+	return a + b;
+}
+
+int main() {
+	int x = 10, y = 5;
+	int value;
+
+	value = SumTwo(x, y);
+
+	printf("두 수의 합 : %d\n", value);
+
+	return 0;
+}
+근언 : SumTwo 함수를 만들어서 숫자 두개를 입력하면 그 숫자의 합을 출력하는 함수를 만들어야해.
+지민 : 
+int SumTwo(int a, int b) {
+	return a + b;
+}
+이런식으로 코드를 짜면 될거같아.
+
+#include<stdio.h>
+
+int Average(float x, float y) {
+	return (x + y) / 2;
+}
+
+int main() {
+	float num1, num2, result;
+	printf("실수 2개를 입력하세요 : ");
+	scanf_s("%f %f" ,&num1, &num2);
+
+	result = Average(num1, num2);
+
+	printf("두 실수의 평균 : %f\n", result);
+
+	return 0;
+근언 : 이번엔 두 실수의 평균을 출력해야해.
+지민 : 그러면 Average의 리턴 값을 두 수의 평균으로 바꾸고 실행해보자.
+
+
+#include<stdio.h>
+
+void print_hello ()
+{
+	printf("Hello, world!\n");
+}
+
+int main() 
+{
+	
+	printf("함수의 주소값 :%p\n", print_hello);
+
+	return 0;
+}
+근언 : Hello, world!의 주소를 찾는 함수를 만들어보자.
+지민 : 좋아 위는 Hello, world!를 작성하고 출력하는 함수를 만들고, 메인함수에는 그것의 위치를 찾는 코드를 짜보자
+근언 : 실행해봤더니 00007FF797BD13DE라는 값이 나와 이게 이 함수의 주소값인가봐.
+
