@@ -80,3 +80,34 @@ void Swap(int* a, int* b)
 }
 Swap 함수를 이렇게 바꾸고 
 Swap(&x, &y); 중간에 Swap함수를 이렇게 호출했더니 잘 실행 되는거 같아.
+
+#include<stdio.h>
+
+void CountIncrement1(int n)
+{
+	n++;
+}
+
+void CountIncrement2(int* n)
+{
+	(*n)++;
+}
+
+int main(void)
+{
+	int a = 10;
+	printf("a의 초깃값 : %d\n", a);
+	
+	CountIncrement1(a);
+	printf("CountIncrement1 함수 실행 후 a의 값 : %d\n", a);
+	
+	CountIncrement2(&a);
+	printf("CountIncrement2 함수 실행 후 a의 값 : %d\n", a);
+
+	return 0;
+}
+: 같은 맥락으로 위에부터 10 10 11이 순서대로 출력될거야.
+: 맞아. 포인터로 받지 않는 a값 자체는 변하지 않기때문에 10으로 받는거야.
+: 포인터로 받은 a값은 11이 될거고.
+: 완벽하게 이해한거 같아.
+
