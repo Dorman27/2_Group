@@ -1,0 +1,82 @@
+#include<stdio.h>
+
+int main()
+{
+	int i = 10;
+	int* ptr = &i;
+
+	printf("ptr의 주소 값 : %p\n", &ptr);
+	printf("i의 주소 값 : %p\n", &i);
+	printf("i의 주소 값 : %p\n\n0", ptr);
+
+	printf("i의 값 : %d\n", i);
+	printf("i의 값 : %d\n", *ptr);
+
+	return 0;
+}
+
+: 예상 결과 값?
+: 위에서 부터 ptr의 주소 값, i의 주소 값, i의 주소 값, i의 값, i의 값이 나올 거 같아.
+: 맞아. 정확해.
+
+#include<stdio.h>
+
+int main()
+{
+	int i = 10; 
+	int* ptr = &i;
+	*ptr = i + 20;
+	printf("i 값 : &d \n", i);
+
+	i = i + 20;
+	printf("i 값 : %d \n", *ptr);
+	return 0;
+}
+
+: 예상 결과 값 ?
+: 위는 30 아래는 50.
+: 좋다. 답이야.
+
+#include<stdio.h>
+
+void Swap(int a, int b)
+{
+	int c = a;
+	a = b; 
+	b = c;
+}
+int main()
+{
+	int x = 10, y = 5;
+	printf("Swap() 함수 실행 전\n");
+	printf("x = %d, y = %d이다.\n\n", x, y);
+
+	Swap(x, y);
+	printf("Swap() 함수 실행 후 \n");
+	printf("x = %d, y = %d이다. \n", x, y);
+
+	return 0;
+}
+
+
+: void Swap(int a, int b)
+{
+	int c = a;
+	a = b; 
+	b = c;
+}
+Swap함수를 이런식으로 구성했어.
+: 오 그런데 왜 x와 y의 값이 안 바뀌지? 
+: swap을 main함수 안에서 짰을 때는 바뀌는데 Swap함수로 따로 빼면 안 바뀌네?
+: 맞네.
+: 아~ 함수에 x, y의 값이 Swap함수에 전달은 되지만, x와 y의 값 자체는 함수와 관련이 없어서 그런거 같아.
+: 오 그러면 스왑함수에 포인터를 사용해서 값을 전달하면 바뀌려나 ?
+: 
+void Swap(int* a, int* b)
+{
+	int c = *a;
+	*a = *b; 
+	*b = c;
+}
+Swap 함수를 이렇게 바꾸고 
+Swap(&x, &y); 중간에 Swap함수를 이렇게 호출했더니 잘 실행 되는거 같아.
