@@ -109,3 +109,35 @@ void Shell_Sort(int* a, int count)
 : h 간격만큼 떨어진 원소를 모은 부분집합에서 삽입 정렬을 각각 수행해.
 : h 간격을 재설정하고 과정 바로 위 과정 반복해.
 
+#퀵정렬
+
+void Quick_Sort(int* a, int count)
+{
+	int i, j, v, temp;
+	if (count > 1)
+	{
+		v = a[count - 1];
+
+		i = -1;
+		j = count - 1\;
+
+		for (;;)
+		{
+			while (a[++i] < v);
+			while (a[--j] < v);
+			if (i >= j)break;
+			temp = a[i];
+			a[i] = a[j];
+			a[j] = temp;
+		}
+		temp = a[i];
+		a[i] = a[count - 1];
+		data[count - 1] = temp;
+		Quick_Sort(a, i);
+		Quick_Sort(a + i + 1, count - i - 1);
+	}
+}
+
+: 기준원소 피벗을 일단 골라
+: 피벗을 기준으로 피벗보다 작은 값은 왼쪽으로 몰고 큰 값은 오른쪽으로 몰아
+: 피벗은 가만히 두고 왼쪽과 오른쪽 원소 집합을 독립적으로 다시 퀵 정렬을 해
