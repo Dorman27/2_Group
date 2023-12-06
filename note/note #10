@@ -1,0 +1,111 @@
+#선택정렬
+void Select_Sort(int* a, int count)
+{
+	int i, j;
+	int min_value, min_index;
+	
+	for (i = 0;i < count- 1;i++)
+	{
+		min_index =i;
+		min_value = a[i];
+		for (j = i + 1; j < count;j++)
+		{
+			if (min_value > a[j])
+			{
+				min_index = j;
+				min_value = a[j];
+			}
+		}
+		a[min_index] = a[i];
+		a[i] = min_value;
+	}
+}
+
+:선택정렬은 리스트에서 일단 가장 작은원소를 찾아.
+:그리고 첫번째 원소와 자리를 바꿔
+:정렬되지 않은 리스트에서 가장 작은 값을 벽 앞의 정렬된 리스트로 넘겨
+:가상의 벽을 현재 위치에서 한칸 뒤로 옮겨서 검색 범위를 점점 좁혀
+
+#버블정렬
+void Bubble_Sort(int *a, int count)
+{
+    int i, j;
+    int temp;
+    for(i = 0; i < count-1; i+ +) // 패스 반복
+    {
+        for( j = 1; j < count-i; j+ +) // 최솟값 찾기
+        {
+            if(a[j-1] > a[j])
+            {
+                temp = a[j-1];
+                    a[j-1] = a[j];
+                    a[j] = temp;
+            }
+        }
+    }
+}
+
+: 리스트의 뒤에서부터 앞으로 값을 하나씩 비교하면서 현재값보다 작은 값을 찾으면 자리를 바꿔.
+: 이 과정을 반복하면 가장 작은 값이 정렬되지 않은 리스트의 맨 앞에 와.
+: 값을 가상의 벽 앞 정렬된 리스트로 넘길거야
+: 가상의 벽을 한 칸 뒤로 옮겨서 리스트의 범위를 좁힐거야.
+: 반대로 큰거를 뒤로 넘기는 방법도 있어.
+
+# 삽입정렬
+void Insert_Sort(int *a, int count)
+{
+    int i, j;
+    int temp;
+    for(i = 1; i < count; i+ +) // 전체 루프 반복
+    {
+        temp = a[i];
+        j = i;
+        while((a[j-1] > temp) && ( j > 0)) // 원소 삽입 위치 찾기
+        {
+            a[j] = a[j-1];
+            j = j-1;
+        }
+        a[j] = temp;
+    } 
+}
+
+: 가상의 벽 바로 뒤 값을 벽 앞의 값과 비교해
+: 가상의 벽 뒤 값이 크면 가상의 벽을 한 칸 뒤로 옮기고 한번 더 위와 똑같은 과정을 거쳐
+: 가상의 벽 뒤 값이 작으면 그 값을 정렬된 리스트의 값과 뒤에서부터 하나씩 비교해
+: 이동해야 하는 값보다 작은 잢을 발견하면 그 값 뒤에 가상의 벽을 바로 뒤의 값을 옮겨
+: 가상의 벽을 현재 위치에서 한 칸 뒤로 옮겨 정렬되지 않은 리스트의 범위를 좁혀
+
+#셀 정렬
+
+void Shell_Sort(int* a, int count)
+{
+	int i, j, inc, h;
+	int temp;
+
+	for (h = count / 2; h > 0; h /= 2)
+	{
+		for (i = 0; i < h; i++)
+		{
+			for (j = i + h; j < count; j += h)
+			{
+				temp = a[j];
+				inc = j;
+
+				while (inc > h - 1 && a[inc - h] > temp)
+				{
+					a[inc] = a[inc - h];
+					inc = inc - h;
+				}
+
+				a[inc] = temp;
+			}
+		}
+	}
+}
+
+: 1959년에 만들어진 알고리즘인대, 삽입 정렬을 개선한거야.
+
+: h의 간격을 설정해.
+: h 간격만큼 떨어진 원소를 모은 부분집합에서 삽입 정렬을 각각 수행해.
+: h 간격을 재설정하고 과정 바로 위 과정 반복해.
+
