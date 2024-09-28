@@ -15,3 +15,4 @@ int main() {
     cout << "102 번지의 값 = " << (int)ram.read(102) << endl;
 
     return 0;
+}
