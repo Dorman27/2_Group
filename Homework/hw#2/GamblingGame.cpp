@@ -9,7 +9,7 @@ void GamblingGame::play() {
 }
 
 bool GamblingGame::takeTurn(Player* player) {
-    cout << player->getName() << " <Enter> Ű �Է�" << endl;
+    cout << player->getName() << " <Enter> Å° ÀÔ·Â";
 
     cin.get();
 
@@ -20,11 +20,11 @@ bool GamblingGame::takeTurn(Player* player) {
     cout << num1 << " " << num2 << " " << num3 << " ";
 
     if (num1 == num2 && num2 == num3) {
-        cout << player->getName() << "�� �¸�!!" << endl;
+        cout << player->getName() << "´Ô ½Â¸®!!" << endl;
         return true;
     }
     else {
-        cout << "�ƽ�����!" << endl;
+        cout << "¾Æ½±±º¿ä!" << endl;
         return false;
     }
 }
