@@ -56,7 +56,9 @@ void GamblingGame::play() {
 }
 
 bool GamblingGame::takeTurn(Player* player) {
-    cout << player->getName() << " <Enter> 키 입력" << endl;
+    cout << player->getName() << " <Enter> 키 입력" << flush;
+
+    cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
 
     cin.get();
 
