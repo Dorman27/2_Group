@@ -3,6 +3,7 @@ using namespace std;
 
 #include "Ram.h"
 
+
 int main() {
     Ram ram;
 
