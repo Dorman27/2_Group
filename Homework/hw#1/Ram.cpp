@@ -3,7 +3,6 @@ using namespace std;
 
 #include "Ram.h"
 
-
 Ram::Ram() {
     size = 100 * 1024;
     for (int i = 0; i < size; i++) {
