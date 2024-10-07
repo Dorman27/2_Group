@@ -1,6 +1,7 @@
 #ifndef RAM_H
 #define RAM_H
 
+
 class Ram {
     char mem[100 * 1024];  // 100KB 메모리
     int size;
