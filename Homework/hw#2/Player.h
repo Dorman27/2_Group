@@ -1,15 +1,11 @@
-#pragma once
-#ifndef PLAYER_H
-#define PLAYER_H
+#include "Player.h"
 
-#include <string>
-using namespace std;
+void Player::setName(std::string name)
+{
+    this->name = name;
+}
 
-class Player {
-    string name;
-public:
-    Player(string n) : name(n) {}
-    string getName() { return name; } 
-};
-
-#endif
+std::string Player::getName()
+{
+    return name;
+}
