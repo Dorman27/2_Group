@@ -1,11 +1,14 @@
-#include "Player.h"
+#ifndef PLAYER_H
+#define PLAYER_H
 
-void Player::setName(std::string name)
-{
-    this->name = name;
-}
+#include <string>
 
-std::string Player::getName()
+class Player
 {
-    return name;
-}
+    std::string name;
+public:
+    void setName(std::string name);
+    std::string getName();
+};
+
+#endif
