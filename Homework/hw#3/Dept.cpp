@@ -27,7 +27,7 @@ public:
     int getSize() { return size; }
 
     void read() {
-        cout << "10°³ Á¡¼ö ÀÔ·Â>> ";
+        cout << "10Â°Â³ ÃÂ¡Â¼Ã¶ Ã€Ã”Â·Ã‚>> ";
         for (int i = 0; i < size; i++) {
             cin >> scores[i];
         }
@@ -50,5 +50,5 @@ int main() {
     Dept com(10);
     com.read();
     int n = countPass(com);
-    cout << "60Á¡ ÀÌ»óÀº " << n << "¸í";
+    cout << "60ì  ì´ìƒì€ " << n << "Â¸Ã­";
 }
