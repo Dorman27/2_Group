@@ -27,7 +27,7 @@ public:
         }
     }
 
-    bool isOver60(int index) const {
+    bool overSixteen(int index) const {
         return scores[index] > 60;
     }
 };
@@ -35,7 +35,7 @@ public:
 int countPass(const Dept& dept) {
     int count = 0;
     for (int i = 0; i < dept.getSize(); i++) {
-        if (dept.isOver60(i)) count++;
+        if (dept.overSixteen(i)) count++;
     }
     return count;
 }
