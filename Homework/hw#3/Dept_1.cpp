@@ -11,7 +11,6 @@ public:
         scores = new int[size];
     }
 
-    // Copy constructor
     Dept(const Dept& dept) {
         size = dept.size;
         scores = new int[size];
